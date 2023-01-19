@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class ex {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to X project");
 
         System.out.println("Enter any number between 0 and 165");
         int s =sc.nextInt();
