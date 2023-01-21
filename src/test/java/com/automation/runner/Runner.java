@@ -15,7 +15,8 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "com.automation.steps",
-        tags = "@Baiat"
+        tags = "@Baiat",
+        plugin = {"html:html-report/report.html","json:target/cucumber.json"}
 
 )
 
