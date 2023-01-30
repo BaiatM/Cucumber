@@ -15,9 +15,10 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "com.automation.steps",
-        tags = "@Baiat",
-        plugin = {"html:html-report/report.html","json:target/cucumber.json"}
-
+        tags = "@List",
+       // tags  = "@List""@baiat",
+        //plugin = {"html:html-report/report.html","json:target/cucumber.json"},
+        dryRun = false
 )
 
 public class Runner {

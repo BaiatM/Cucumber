@@ -1,9 +1,14 @@
 package com.automation.steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+
+import java.util.Collections;
+import java.util.List;
 
 public class StepDefinition {
     @And("user open website")
@@ -31,10 +36,7 @@ public class StepDefinition {
         System.out.println("user enter the invalid credentials");
     }
 
-    @Then("verify invalid login error message is displayed")
-    public void verify_invalid_login_error_message_is_displayed() {
-        System.out.println("verify invalid login error message is displayed");
-    }
+
     @When("user search with TV")
     public void user_search_with_tv() {
         System.out.println("user search with TV");
@@ -90,4 +92,31 @@ public class StepDefinition {
         System.out.println("verify total quantity updated on the cart");
     }
 
+    @Then("verify invalid login error message is displayed")
+    public void verify_invalid_login_error_message_is_displayed() {
+        System.out.println("verify invalid login error message is displayed");
+    }
+
+    @When("user entered username {string} and password {string}")
+    public void userEnteredUsernameAndPassword(String username, String password) {
+        System.out.println("=========="+username);
+        System.out.println("=========="+password);
+    }
+    @Then("verify dropdown option")
+    public void verify_dropdown_option(DataTable dt) {
+        List<String> data = dt.asList();
+        for(String str: data){
+            System.out.println(str);
+        }
+    }
+    @Then("verify table data")
+    public void verify_table_data(DataTable dt) {
+        List<List<String>> table = dt.asLists();
+        for(List<String> row: table){
+            for(String item: row){
+                System.out.print(item+"    ");
+            }
+            System.out.println();
+        }
+    }
 }
